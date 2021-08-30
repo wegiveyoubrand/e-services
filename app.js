@@ -3,6 +3,8 @@ const express = require("express");
 
 const ejs = require("ejs");
 
+const PORT = process.env.PORT || 3000;
+
 // set to use
 const app = express("");
 app.use(express.static("public"));
@@ -10,8 +12,7 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 
 // listen to port
-app.listen(process.env.PORT || 3000);
-
+app.listen(PORT);
 // routing
 app.get("/", function (req, res) {
   res.render("index", { title: "Home" });
